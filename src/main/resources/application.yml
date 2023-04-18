@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: book-shop
+  profiles:
+    include:
+      - db
