@@ -2,19 +2,21 @@ package com.company.firstspringproject.service.impl;
 
 import com.company.firstspringproject.entity.Book;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.company.firstspringproject.repository.BookRepository;
 import com.company.firstspringproject.service.BookService;
-import java.util.List;
 
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
+    private final ModelMapper modelMapper;
 
     @Override
     public ResponseEntity<List<Book>> findAll() {

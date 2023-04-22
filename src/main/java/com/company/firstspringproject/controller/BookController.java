@@ -30,14 +30,14 @@ public class BookController {
 
     //      UPDATE
     @PutMapping("/update")
-    public ResponseEntity<String> bookUpdate(Book book) {
+    public ResponseEntity<String> bookUpdate(@RequestBody Book book) {
         return bookService.update(book);
     }
 
 
     //      DELETE
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> bookDelete(Long id) {
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<String> bookDelete(@PathVariable Long id) {
         return bookService.delete(id);
     }
 
